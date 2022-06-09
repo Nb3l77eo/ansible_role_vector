@@ -24,6 +24,6 @@ inputs   = ["parse_logs"]
 type     = "clickhouse"
 database = "logs"
 healthcheck = false
-endpoint = "http://{{ hostvars['clickhouse-01']['ansible_host'] }}:8123" #  Адрес Clickhouse
+endpoint = "http://{{ hostvars['clickhouse-01']['ansible_host']|default("127.0.0.1") }}:8123" #  Адрес Clickhouse
 table = "my_table"
 compression = "gzip"

@@ -2,3 +2,6 @@
 # defaults file for vector
 
 vector_version: "0.21.2" # or "latest"
+
+clickhouse-01:
+  ansible_host: "127.0.0.1"

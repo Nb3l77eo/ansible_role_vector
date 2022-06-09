@@ -1,0 +1,19 @@
+---
+#Main installation actions
+
+- name: Install vector dist
+  become: true
+  ansible.builtin.dnf:
+    name: "{{ vector_distrib }}"
+    disable_gpg_check: yes
+    disablerepo: "*"
+    state: present
+
+- name: Create vector config
+  become: true
+  ansible.builtin.template:
+    src: vector.toml.j2
+    dest: /etc/vector/vector.toml
+    owner: root
+    group: wheel
+    mode: '755'
