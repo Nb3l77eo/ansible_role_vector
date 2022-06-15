@@ -30,29 +30,6 @@
         - "install/{{ ansible_pkg_mgr }}.yml"
         - 'empty.yml'
 
-# # - name: Install vector dist
-# #   become: true
-# #   ansible.builtin.yum:
-# #     name: "{{ vector_distrib }}"
-
-# # - name: Create vector config
-# #   become: true
-# #   ansible.builtin.template:
-# #     src: vector.toml.j2
-# #     dest: /etc/vector/vector.toml
-# #     owner: root
-# #     group: wheel
-# #     mode: '755'
-
-# - name: Validate vector config
-#   become: true
-#   ansible.builtin.command: "vector validate"
-#   changed_when: false
-
-# - name: "Get vector version"
-#   ansible.builtin.command: "vector --version"
-#   changed_when: false
-
 - name: Enable vector service
   become: true
   ansible.builtin.service:
