@@ -1,0 +1,36 @@
+---
+
+# Check vector config file exists
+  - name: Check that the conf exists
+    stat:
+      path: /etc/vector/vector.toml
+    register: chk_conf_file
+
+  - name: Check chk_conf_file.stat is true
+    assert:
+      that: chk_conf_file.stat.exists
+
+# Check vector config file validate
+  - name: Validate vector config
+    become: true
+    ansible.builtin.command: "vector validate"
+    register: vector_validate_conf
+    changed_when: false
+    # ignore_errors: true
+
+  - name: Get Vector version
+    ansible.builtin.command: "vector --version"
+    register: vector_ver
+
+  # - name: Print reg vector_ver 
+  #   ansible.builtin.debug:
+  #     var: vector_ver.stdout
+
+  # - name: Print var vector_version 
+  #   ansible.builtin.debug:
+  #     var: vector_version
+
+# {{ vector_version }} is not defined
+  # - name: "Vector is {{ vector_version }}"
+  #   assert:
+  #     that: "'{{ vector_version }}' in vector_ver.stdout"

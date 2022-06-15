@@ -1,7 +1,7 @@
 galaxy_info:
-  author: Nb3l77eo
+  author: nb3l77eo
   description: Role for installation Vector
-  company: Nb3l77eo-ltd
+  company: nb3l77eo-ltd
 
   # If the issue tracker for your role is not on github, uncomment the
   # next line and provide a value
@@ -16,7 +16,7 @@ galaxy_info:
   # - CC-BY-4.0
   license: MIT
 
-  min_ansible_version: 2.10
+  min_ansible_version: "2.10"
 
   # If this a Container Enabled role, provide the minimum Ansible Container version.
   # min_ansible_container_version:
@@ -30,8 +30,8 @@ galaxy_info:
   platforms:
     - name: EL
       versions:
-        - 7
-        - 8
+        - "7"
+        - "8"
   # - name: Fedora
   #   versions:
   #   - all

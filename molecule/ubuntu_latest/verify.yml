@@ -8,3 +8,6 @@
   - name: Example assertion
     assert:
       that: true
+
+  - name: Add common Verify
+    import_tasks: "../common_verify/verify.yml"
