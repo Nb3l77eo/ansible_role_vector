@@ -16,7 +16,6 @@
     ansible.builtin.command: "vector validate"
     register: vector_validate_conf
     changed_when: false
-    # ignore_errors: true
 
   - name: Get Vector version
     ansible.builtin.command: "vector --version"
