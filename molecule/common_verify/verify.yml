@@ -1,5 +1,7 @@
 ---
 
+
+
 # Check vector config file exists
   - name: Check that the conf exists
     stat:
@@ -19,17 +21,26 @@
 
   - name: Get Vector version
     ansible.builtin.command: "vector --version"
-    register: vector_ver
+    register: vector_ver_installed
 
-  # - name: Print reg vector_ver 
-  #   ansible.builtin.debug:
-  #     var: vector_ver.stdout
 
-  # - name: Print var vector_version 
-  #   ansible.builtin.debug:
-  #     var: vector_version
+### DEBUG
 
-# {{ vector_version }} is not defined
-  # - name: "Vector is {{ vector_version }}"
-  #   assert:
-  #     that: "'{{ vector_version }}' in vector_ver.stdout"
+
+
+# # Try to include vars from role - no results
+
+#   - name: Include vars from role
+#     ansible.builtin.include_vars:
+#       file: ../../defaults/main.yml
+
+#   - name: Print var vector_ver 
+#     ansible.builtin.debug:
+#       var: vector_ver.stdout
+
+
+# # {{ vector_version }} is not defined
+
+#   - name: "Vector is {{ vector_version }}"
+#     assert:
+#       that: "'{{ vector_version }}' in vector_ver_installed.stdout"

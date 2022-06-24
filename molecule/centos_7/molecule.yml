@@ -15,7 +15,7 @@ provisioner:
   # inventory:
   #   links:
   #     hosts: ../../defaults/main.yml
-  #     group_vars: ../resources/inventory/group_vars/
-  #     host_vars: ../resources/inventory/host_vars/
+  #     group_vars: ../../defaults/main.yml
+  #     host_vars: ../../defaults/main.yml
 verifier:
   name: ansible
