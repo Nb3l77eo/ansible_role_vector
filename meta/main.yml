@@ -2,6 +2,8 @@ galaxy_info:
   author: nb3l77eo
   description: Role for installation Vector
   company: nb3l77eo-ltd
+  role_name: ansible_role_vector
+  namespace: nb3l77eo
 
   # If the issue tracker for your role is not on github, uncomment the
   # next line and provide a value
